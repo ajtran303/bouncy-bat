@@ -26,6 +26,7 @@ func _ready() -> void:
 	
 	var score_shape: RectangleShape2D = $ScoreZone/CollisionShape2D.shape.duplicate()
 	score_shape.size.y = gap_size
+	$ScoreZone/CollisionShape2D.shape = score_shape
 	$ScoreZone.position.y = gap_center - 24.0
 	
 	_base_y = position.y

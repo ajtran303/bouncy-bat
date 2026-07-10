@@ -45,6 +45,7 @@ func die() -> void:
 		return
 	is_dead = true
 	set_physics_process(false)
+	$DeathSound.play()
 	$AnimatedSprite2D.hide()
 	$DeathAnimation.emitting = true
 	get_tree().paused = true

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctgsyb8mxq2" path="res://Art/bat-frames/bat-2.png" id="3_514ka"]
 [ext_resource type="PackedScene" uid="uid://c72wwum2xe7dw" path="res://Scenes/Bat/death_animation.tscn" id="4_x84ef"]
 [ext_resource type="AudioStream" uid="uid://crx62boqiddmt" path="res://Audio/330967__deleted_user_2104797__bird-flap-b-05.wav" id="5_514ka"]
+[ext_resource type="AudioStream" uid="uid://c1jfss0b25cf0" path="res://Audio/555412__tonsil5__zombie-death-1.wav" id="6_ywn6p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wb2dy"]
 animations = [{
@@ -59,6 +60,10 @@ process_mode = 3
 
 [node name="FlapSound" type="AudioStreamPlayer" parent="." unique_id=1465738137]
 stream = ExtResource("5_514ka")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=695161273]
+process_mode = 3
+stream = ExtResource("6_ywn6p")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

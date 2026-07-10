@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b6lg0k0x6i704"]
 
 [ext_resource type="Script" uid="uid://csvdvtlk1601w" path="res://Scenes/SpikePair/spike_pair.gd" id="1_0wr0h"]
+[ext_resource type="Texture2D" uid="uid://bj0hqdv5bf401" path="res://Art/Aqua Crystal Rock.png" id="2_68fol"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb2dy"]
-size = Vector2(64, 720)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t1ykq"]
+radius = 32.0
+height = 678.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qskyy"]
 size = Vector2(32, 80)
@@ -14,29 +16,35 @@ script = ExtResource("1_0wr0h")
 [node name="TopSpike" type="StaticBody2D" parent="." unique_id=1382239498]
 collision_layer = 2
 
-[node name="Rect" type="ColorRect" parent="TopSpike" unique_id=1778087436]
-offset_top = -400.0
-offset_right = 64.0
-offset_bottom = 320.0
+[node name="Rect" type="TextureRect" parent="TopSpike" unique_id=21036988]
+offset_left = -13.0
+offset_top = -356.0
+offset_right = 74.0
+offset_bottom = 364.0
 offset_transform_enabled = true
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_68fol")
+expand_mode = 1
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopSpike" unique_id=1697079050]
 position = Vector2(32, -40)
-shape = SubResource("RectangleShape2D_wb2dy")
+shape = SubResource("CapsuleShape2D_t1ykq")
 
 [node name="BottomSpike" type="StaticBody2D" parent="." unique_id=171813205]
 position = Vector2(0, 400)
 collision_layer = 2
 
-[node name="Rect" type="ColorRect" parent="BottomSpike" unique_id=1573486652]
+[node name="Rect" type="TextureRect" parent="BottomSpike" unique_id=1236934755]
+offset_left = -19.0
+offset_top = -44.0
 offset_right = 64.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
+offset_bottom = 676.0
+texture = ExtResource("2_68fol")
+expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomSpike" unique_id=120227456]
 position = Vector2(32, 360)
-shape = SubResource("RectangleShape2D_wb2dy")
+shape = SubResource("CapsuleShape2D_t1ykq")
 
 [node name="ScoreZone" type="Area2D" parent="." unique_id=1558722792]
 position = Vector2(0, 336)
