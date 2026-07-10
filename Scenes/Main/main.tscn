@@ -79,6 +79,25 @@ theme_override_font_sizes/font_size = 64
 shortcut = SubResource("Shortcut_hfg1r")
 text = "Start"
 
+[node name="Instructions" type="Label" parent="StartUI" unique_id=614160022]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.5
+offset_top = 54.0
+offset_right = 172.5
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hfg1r")
+theme_override_font_sizes/font_size = 32
+text = "Space, Enter, Click, or Tap to Flap"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=277070843 groups=["game_over_ui"]]
 process_mode = 3
 script = ExtResource("1_y3v7k")

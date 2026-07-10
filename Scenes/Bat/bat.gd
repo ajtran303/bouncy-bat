@@ -14,8 +14,9 @@ func start() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("flap"):
 		$AnimatedSprite2D.play("flap")
+		$FlapSound.play()
 		velocity.y = flap_strength
 
 	move_and_slide()
