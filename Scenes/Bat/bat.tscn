@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhpd7plyw2hil" path="res://Scenes/Bat/bat.gd" id="1_wq8pk"]
 [ext_resource type="Texture2D" uid="uid://bm7s1ctnlnp8w" path="res://Art/bat-frames/bat-1.png" id="2_x84ef"]
 [ext_resource type="Texture2D" uid="uid://ctgsyb8mxq2" path="res://Art/bat-frames/bat-2.png" id="3_514ka"]
+[ext_resource type="PackedScene" uid="uid://c72wwum2xe7dw" path="res://Scenes/Bat/death_animation.tscn" id="4_x84ef"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wb2dy"]
 animations = [{
@@ -51,6 +52,9 @@ debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="BatSpawnTimer" type="Timer" parent="." unique_id=1735966460]
 autostart = true
+
+[node name="DeathAnimation" parent="." unique_id=1239463097 instance=ExtResource("4_x84ef")]
+process_mode = 3
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

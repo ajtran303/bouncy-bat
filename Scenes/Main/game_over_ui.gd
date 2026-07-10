@@ -1,8 +1,6 @@
 extends CanvasLayer
 
-@onready var score_label: Label = $ScoreLabel
-
-func show_game_over(final_score: int) -> void:
+func show_game_over() -> void:
 	visible = true
 	$GameOverLabel.text = "Game Over"
 
