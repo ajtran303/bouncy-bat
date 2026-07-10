@@ -1,6 +1,8 @@
 #Bouncy Bat
 
-A Flappy Bird clone
+[Play on itch.io](https://sevngames.itch.io/bouncy-bat)
+
+A Flappy Bird clone with a gothic twist
 
 ## Assets
 
