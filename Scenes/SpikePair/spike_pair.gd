@@ -23,6 +23,11 @@ func _ready() -> void:
 	var pipe_height := 320.0
 	$TopSpike.position.y = gap_center - gap_size / 2.0 - pipe_height
 	$BottomSpike.position.y = gap_center + gap_size / 2.0
+	
+	var score_shape: RectangleShape2D = $ScoreZone/CollisionShape2D.shape.duplicate()
+	score_shape.size.y = gap_size
+	$ScoreZone.position.y = gap_center - 24.0
+	
 	_base_y = position.y
 
 
