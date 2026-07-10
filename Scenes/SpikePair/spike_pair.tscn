@@ -5,11 +5,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb2dy"]
 size = Vector2(64, 720)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qskyy"]
+size = Vector2(64, 80)
+
 [node name="SpikePair" type="Node2D" unique_id=379399170]
 script = ExtResource("1_0wr0h")
 metadata/_edit_group_ = true
 
 [node name="TopSpike" type="StaticBody2D" parent="." unique_id=1382239498]
+collision_layer = 2
 
 [node name="Rect" type="ColorRect" parent="TopSpike" unique_id=1778087436]
 offset_top = -400.0
@@ -24,6 +28,7 @@ shape = SubResource("RectangleShape2D_wb2dy")
 
 [node name="BottomSpike" type="StaticBody2D" parent="." unique_id=171813205]
 position = Vector2(0, 400)
+collision_layer = 2
 
 [node name="Rect" type="ColorRect" parent="BottomSpike" unique_id=1573486652]
 offset_right = 64.0
@@ -33,3 +38,12 @@ color = Color(0, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomSpike" unique_id=120227456]
 position = Vector2(32, 360)
 shape = SubResource("RectangleShape2D_wb2dy")
+
+[node name="ScoreZone" type="Area2D" parent="." unique_id=1558722792]
+position = Vector2(0, 336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone" unique_id=2123719230]
+position = Vector2(32, 24)
+shape = SubResource("RectangleShape2D_qskyy")
+
+[connection signal="body_entered" from="ScoreZone" to="." method="_on_score_zone_body_entered"]

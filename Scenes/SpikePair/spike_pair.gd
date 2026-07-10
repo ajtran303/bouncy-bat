@@ -1,5 +1,7 @@
 extends Node2D
 
+signal scored
+
 @export var scroll_speed: float = 200.0
 
 @export var gap_size_min: float = 120.0
@@ -36,3 +38,9 @@ func _physics_process(delta: float) -> void:
 		position.y = _base_y + sin(_elapsed * oscillation_speed) * oscillation_range
 	if position.x < -100.0:
 		queue_free()
+
+
+func _on_score_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		scored.emit()
+		$ScoreZone/CollisionShape2D.set_deferred("disabled", true)

@@ -17,4 +17,8 @@ func _on_spawn_timer_timeout() -> void:
 	var spike := spike_scene.instantiate()
 	spike.position.x = spawn_x
 	spike.oscillates = randf() < 0.33
+	spike.scored.connect(_on_spike_scored)
 	add_child(spike)
+
+func _on_spike_scored() -> void:
+	GameManager.add_score(1)

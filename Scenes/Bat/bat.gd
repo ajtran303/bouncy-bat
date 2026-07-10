@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var gravity: float = 900.0
 @export var flap_strength: float = -300.0
 
+var is_dead := false
+
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 
@@ -22,3 +24,12 @@ func _on_bat_spawn_timer_timeout() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	$AnimatedSprite2D.frame = 0
+
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if is_dead:
+		return
+	is_dead = true
+	set_physics_process(false)
+	get_tree().paused = true
+	get_tree().call_group("game_over_ui", "show_game_over", GameManager.score)
