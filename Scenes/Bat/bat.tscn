@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dbvake4n1sl7o"]
+
+[ext_resource type="Script" uid="uid://bhpd7plyw2hil" path="res://Scenes/Bat/bat.gd" id="1_wq8pk"]
+[ext_resource type="Texture2D" uid="uid://bm7s1ctnlnp8w" path="res://Art/bat-frames/bat-1.png" id="2_x84ef"]
+[ext_resource type="Texture2D" uid="uid://ctgsyb8mxq2" path="res://Art/bat-frames/bat-2.png" id="3_514ka"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wb2dy"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("2_x84ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_514ka")
+}],
+"loop": 0,
+"name": &"flap",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wfo7u"]
+radius = 18.0
+height = 64.0
+
+[node name="Bat" type="CharacterBody2D" unique_id=278725302]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_wq8pk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1026812621]
+sprite_frames = SubResource("SpriteFrames_wb2dy")
+animation = &"flap"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1856956556]
+position = Vector2(16, -18)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wfo7u")
+
+[node name="BatSpawnTimer" type="Timer" parent="." unique_id=1735966460]
+autostart = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="BatSpawnTimer" to="." method="_on_bat_spawn_timer_timeout"]

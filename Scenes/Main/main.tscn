@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b1wr21a52pic2"]
+
+[ext_resource type="PackedScene" uid="uid://dbvake4n1sl7o" path="res://Scenes/Bat/bat.tscn" id="1_1r6ip"]
+
+[node name="Main" type="Node" unique_id=110473735]
+
+[node name="Bat" parent="." unique_id=278725302 instance=ExtResource("1_1r6ip")]
+position = Vector2(150, 300)
