@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://ccatlx7yqshqt" path="res://Scenes/Main/start_ui.gd" id="1_imbg2"]
 [ext_resource type="Script" uid="uid://buxq2px8nuhrl" path="res://Scenes/Main/game_over_ui.gd" id="1_y3v7k"]
 [ext_resource type="Texture2D" uid="uid://bhxkb8xfddyl" path="res://Art/cave_parts/cave_0002_back.png" id="2_2a143"]
-[ext_resource type="FontFile" uid="uid://dpdtd1eyw700y" path="res://Fonts/Xolonium-Regular.ttf" id="2_hryqi"]
+[ext_resource type="FontFile" uid="uid://bsakp2cpnlpw7" path="res://Fonts/UnifrakturCook-Bold.ttf" id="2_hfg1r"]
 [ext_resource type="Script" uid="uid://crqdcbeo2ftc1" path="res://Scenes/Main/spike_spawner.gd" id="2_lixft"]
 [ext_resource type="PackedScene" uid="uid://b6lg0k0x6i704" path="res://Scenes/SpikePair/spike_pair.tscn" id="3_qw60k"]
 [ext_resource type="Texture2D" uid="uid://c8t87cd5cg2u6" path="res://Art/cave_parts/cave_0001_mid.png" id="3_xlvfx"]
@@ -26,7 +26,7 @@ offset_top = 40.0
 offset_right = -40.0
 offset_bottom = 63.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
 
 [node name="StartUI" type="CanvasLayer" parent="." unique_id=1932888851]
@@ -44,7 +44,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
 text = "Bouncy Bat"
 horizontal_alignment = 1
@@ -62,7 +62,7 @@ offset_right = 88.5
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 
@@ -82,7 +82,7 @@ offset_right = 20.0
 offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -99,7 +99,7 @@ offset_right = 128.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
 text = "Restart"
 metadata/_edit_use_anchors_ = true

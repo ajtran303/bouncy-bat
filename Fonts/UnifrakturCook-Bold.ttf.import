@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dpdtd1eyw700y"
-path="res://.godot/imported/Xolonium-Regular.ttf-504ec2ef3fc3ddb9719f016979292baa.fontdata"
+uid="uid://bsakp2cpnlpw7"
+path="res://.godot/imported/UnifrakturCook-Bold.ttf-7e7903610aa4d4bcb33ba6df9ef31a5a.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Xolonium-Regular.ttf"
-dest_files=["res://.godot/imported/Xolonium-Regular.ttf-504ec2ef3fc3ddb9719f016979292baa.fontdata"]
+source_file="res://Fonts/UnifrakturCook-Bold.ttf"
+dest_files=["res://.godot/imported/UnifrakturCook-Bold.ttf-7e7903610aa4d4bcb33ba6df9ef31a5a.fontdata"]
 
 [params]
 
