@@ -12,6 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://jcr18onbaob8" path="res://Art/cave_parts/cave_0003_color.png" id="4_5yls4"]
 [ext_resource type="Texture2D" uid="uid://g1ckhk3feuj0" path="res://Art/cave_parts/cave_0000_front.png" id="4_xlvfx"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_4e4y2"]
+action = &"ui_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_hfg1r"]
+events = [SubResource("InputEventAction_4e4y2")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_vk4q2"]
+action = &"ui_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_6t3k2"]
+events = [SubResource("InputEventAction_vk4q2")]
+
 [node name="Main" type="Node" unique_id=110473735]
 
 [node name="ScoreUI" type="CanvasLayer" parent="." unique_id=1686597146]
@@ -64,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_hfg1r")
 text = "Start"
 
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=277070843 groups=["game_over_ui"]]
@@ -101,6 +114,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_hfg1r")
 theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_6t3k2")
 text = "Restart"
 metadata/_edit_use_anchors_ = true
 
