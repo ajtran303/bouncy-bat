@@ -1,8 +1,5 @@
-extends Node
+extends CanvasLayer
 
-signal score_changed(new_score: int)
-
-var score := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func add_score(amount: int) -> void:
-	score += amount
-	score_changed.emit(score)
+func _on_start_button_pressed() -> void:
+	visible = false
+	$"../SpawnTimer".start()
+	$"../Bat".start()

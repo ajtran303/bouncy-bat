@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://b1wr21a52pic2"]
 
 [ext_resource type="PackedScene" uid="uid://dbvake4n1sl7o" path="res://Scenes/Bat/bat.tscn" id="1_1r6ip"]
+[ext_resource type="Script" uid="uid://cobivyynkx40v" path="res://Scenes/Main/score_ui.gd" id="1_hfg1r"]
+[ext_resource type="Script" uid="uid://ccatlx7yqshqt" path="res://Scenes/Main/start_ui.gd" id="1_imbg2"]
 [ext_resource type="Script" uid="uid://buxq2px8nuhrl" path="res://Scenes/Main/game_over_ui.gd" id="1_y3v7k"]
 [ext_resource type="Texture2D" uid="uid://bhxkb8xfddyl" path="res://Art/cave_parts/cave_0002_back.png" id="2_2a143"]
+[ext_resource type="FontFile" uid="uid://dpdtd1eyw700y" path="res://Fonts/Xolonium-Regular.ttf" id="2_hryqi"]
 [ext_resource type="Script" uid="uid://crqdcbeo2ftc1" path="res://Scenes/Main/spike_spawner.gd" id="2_lixft"]
 [ext_resource type="PackedScene" uid="uid://b6lg0k0x6i704" path="res://Scenes/SpikePair/spike_pair.tscn" id="3_qw60k"]
 [ext_resource type="Texture2D" uid="uid://c8t87cd5cg2u6" path="res://Art/cave_parts/cave_0001_mid.png" id="3_xlvfx"]
@@ -11,18 +14,95 @@
 
 [node name="Main" type="Node" unique_id=110473735]
 
+[node name="ScoreUI" type="CanvasLayer" parent="." unique_id=1686597146]
+script = ExtResource("1_hfg1r")
+
+[node name="ScoreLabel" type="Label" parent="ScoreUI" unique_id=367769224]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_font_sizes/font_size = 64
+
+[node name="StartUI" type="CanvasLayer" parent="." unique_id=1932888851]
+script = ExtResource("1_imbg2")
+
+[node name="Message" type="Label" parent="StartUI" unique_id=1232932489]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_font_sizes/font_size = 64
+text = "Bouncy Bat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="StartUI" unique_id=2134574430]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -126.0
+offset_right = 88.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=277070843 groups=["game_over_ui"]]
 process_mode = 3
 script = ExtResource("1_y3v7k")
 
-[node name="ScoreLabel" type="Label" parent="GameOverUI" unique_id=360141745]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="GameOverLabel" type="Label" parent="GameOverUI" unique_id=360141745]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -39.0
+offset_right = 20.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="GameOverUI" unique_id=1486458328]
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -126.0
+offset_right = 128.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hryqi")
+theme_override_font_sizes/font_size = 64
 text = "Restart"
+metadata/_edit_use_anchors_ = true
 
 [node name="ParallaxCaveColor" type="Parallax2D" parent="." unique_id=40102528]
 repeat_size = Vector2(480, 0)
@@ -73,7 +153,7 @@ spike_scene = ExtResource("3_qw60k")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1820465829]
 wait_time = 1.5
-autostart = true
 
+[connection signal="pressed" from="StartUI/StartButton" to="StartUI" method="_on_start_button_pressed"]
 [connection signal="pressed" from="GameOverUI/RestartButton" to="GameOverUI" method="_on_restart_button_pressed"]
 [connection signal="timeout" from="SpawnTimer" to="SpikeSpawner" method="_on_spawn_timer_timeout"]

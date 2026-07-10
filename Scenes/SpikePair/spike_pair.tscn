@@ -6,11 +6,10 @@
 size = Vector2(64, 720)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qskyy"]
-size = Vector2(64, 80)
+size = Vector2(32, 80)
 
 [node name="SpikePair" type="Node2D" unique_id=379399170]
 script = ExtResource("1_0wr0h")
-metadata/_edit_group_ = true
 
 [node name="TopSpike" type="StaticBody2D" parent="." unique_id=1382239498]
 collision_layer = 2
@@ -43,7 +42,7 @@ shape = SubResource("RectangleShape2D_wb2dy")
 position = Vector2(0, 336)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone" unique_id=2123719230]
-position = Vector2(32, 24)
+position = Vector2(80, 24)
 shape = SubResource("RectangleShape2D_qskyy")
 
 [connection signal="body_entered" from="ScoreZone" to="." method="_on_score_zone_body_entered"]

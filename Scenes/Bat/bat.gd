@@ -5,6 +5,12 @@ extends CharacterBody2D
 
 var is_dead := false
 
+func _ready() -> void:
+	set_physics_process(false)
+
+func start() -> void:
+	set_physics_process(true)
+
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 
@@ -32,4 +38,4 @@ func _on_hurt_box_body_entered(body: Node2D) -> void:
 	is_dead = true
 	set_physics_process(false)
 	get_tree().paused = true
-	get_tree().call_group("game_over_ui", "show_game_over", GameManager.score)
+	get_tree().call_group("game_over_ui", "show_game_over")
